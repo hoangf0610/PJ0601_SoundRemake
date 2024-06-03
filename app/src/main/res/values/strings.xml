@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">PJ0601_SoundRemake</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_home_header">Dont\'t Touch My Phone</string>
+    <string name="tv_home_tap_status">Tap to active</string>
+    <string name="dog">Dog</string>
+    <string name="cat">Cat</string>
+    <string name="police">Police</string>
+    <string name="doorbell">Doorbell</string>
+    <string name="hello">Hello</string>
+    <string name="harp">Harp</string>
+    <string name="laughing">Laughing</string>
+    <string name="alarm_clock">Alarm Clock</string>
+    <string name="rooster">Rooster</string>
+    <string name="piano">Piano</string>
+    <string name="sneeze">Sneeze</string>
+    <string name="train">Train</string>
+    <string name="alarm">Alarm</string>
+    <string name="army">Army</string>
+    <string name="drum">Drum</string>
+    <string name="guitar">Guitar</string>
+    <string name="orchestral_string">Orchestral String</string>
+    <string name="ship">Ship</string>
+    <string name="snoze">Snoze</string>
+    <string name="warning">Warning</string>
+    <string name="whistle">Whistle</string>
+    <string name="wind_chimes">Wind Chimes</string>
+
+    <!--    tutorial-->
+    <string name="tv_tutorial_header">How to Use?</string>
+    <string name="tv_tutorial_title">To learn how to use this app, please read the guide below</string>
+    <string name="tv_tutorial_shutdown">Tap the sound to activate the Don\'t touch my phone feature</string>
+    <string name="tv_tutorial_move">If someone arbitrarily moves your phone, the App will detect that action and start ringing</string>
+    <string name="tv_tutorial_vibration">Before activating, you can set the flashlight, volume, duration as you like</string>
+
+
+    <!--    setting-->
+    <string name="tv_setting_header">Setting</string>
+    <string name="tv_setting_sensitivity">Sensitivity</string>
+    <string name="tv_setting_extension">Extension</string>
+    <string name="sw_setting_extension_content">Light up the screen when searching</string>
+    <string name="tv_setting_flash">Flash Mode</string>
+    <string name="tv_setting_flash_default">Default</string>
+    <string name="tv_setting_flash_disco">Disco Mode</string>
+    <string name="tv_setting_flash_sos">SOS Mode</string>
+    <string name="tv_setting_vibration">Vibration Mode</string>
+    <string name="tv_setting_vibration_default">Default</string>
+    <string name="tv_setting_vibration_strong">Strong vibration</string>
+    <string name="tv_setting_vibration_heartbeat">Heartbeat</string>
+    <string name="tv_setting_vibration_ticktock">Ticktock</string>
+    <string name="tv_setting_language">Language</string>
+    <string name="tv_setting_language_vn">Vietnamese</string>
+
+    <!--    detail -->
+    <string name="tv_detailsound_header">Dog</string>
+    <string name="tv_detailsound_apply">Apply</string>
+    <string name="sw_detailsound_flash">Flash</string>
+    <string name="sw_detailsound_vibration">Vibration</string>
+    <string name="sw_detailsound_sound">Sound</string>
+    <string name="tv_detailsound_volume">Volume</string>
+    <string name="tv_detailsound_duration">Duration</string>
+    <string name="tv_detailsound_duration_15s">15s</string>
+    <string name="tv_detailsound_duration_30s">30s</string>
+    <string name="tv_detailsound_duration_1m">1m</string>
+    <string name="tv_detailsound_duration_2m">2m</string>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color_primary">#1E88E5</color>
+
+    <color name="md_blue_grey_100">#CFD8DC</color>
+    <color name="md_grey_300">#E0E0E0</color>
+
+
+    <color name="tutorial_shadow">#11172E</color>
+    <color name="tutorial_title">#718ef5</color>
+    <color name="tutorial_btnShutdown">#b8d1f8</color>
+    <color name="tutorial_btnMove">#fec1ae</color>
+    <color name="tutorial_btnVibration">#e7c5f9</color>
+    <color name="detail_sound_color">#0B82E0</color>
+
+
+</resources>
