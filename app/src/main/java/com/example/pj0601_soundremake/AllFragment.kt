@@ -15,11 +15,11 @@ class AllFragment : Fragment(R.layout.fragment_all) {
     private val binding get() = _binding!!
 
     companion object {
+        var indexSelected: Int = -1
         const val TAG = "AllFragment"
     }
     lateinit var soundList: MutableList<Sound>
     lateinit var tempAdapter: SoundAdapter
-    private var indexSelected = -1 // -1 là không có item nào được chọn
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

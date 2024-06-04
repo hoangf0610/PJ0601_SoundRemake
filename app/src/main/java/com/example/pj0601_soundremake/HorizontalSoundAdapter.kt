@@ -48,11 +48,12 @@ class HorizontalSoundAdapter(var soundList:MutableList<Sound>, var listener: OnI
         holder.img.setOnClickListener {
             setSelected(sound)
             listener.onItemClickIcon(sound = sound, position)
-            for(s in soundList) s.isSelected = false
-            sound.isSelected = true
-            notifyDataSetChanged()
+//            for(s in soundList) s.isSelected = false
+//            sound.isSelected = true
+//            notifyDataSetChanged()
+
             (holder.itemView.context as MainActivity).soundIndex.value = sound
-            Toast.makeText(holder.itemView.context, sound.name, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(holder.itemView.context, sound.name, Toast.LENGTH_SHORT).show()
         }
     }
 

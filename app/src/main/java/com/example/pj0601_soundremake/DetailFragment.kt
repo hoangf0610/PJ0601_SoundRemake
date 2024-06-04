@@ -27,9 +27,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     lateinit var soundList: MutableList<Sound>
     lateinit var tempAdapter: HorizontalSoundAdapter
 
-
     private lateinit var  soundSelected :Sound
-    private var indexSelected = -1 // -1 là không có item nào được chọn
 
 
     override fun onCreateView(
@@ -63,6 +61,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 soundSelected.name = sound.name
                 binding.icon.setImageResource(sound.icon)
                 binding.tvSoundName.setText(sound.name)
+                AllFragment.indexSelected = position
             }
         })
 
@@ -122,24 +121,9 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         binding.tvApply.setOnClickListener {
             (activity as MainActivity).soundLiveData.value = soundSelected
+            (activity as MainActivity).soundIndex.value = soundSelected
             parentFragmentManager.popBackStack()
         }
-
-        (activity as? MainActivity)?.soundLiveData?.observe(activity as LifecycleOwner) {
-            Log.i(AllFragment.TAG, "observe PictureItem Livedata $it")
-
-            for(s in soundList) {
-                s.isSelected = false
-            }
-
-            if (indexSelected != -1) {
-                soundList[indexSelected] = it
-                soundList[indexSelected].isSelected = true
-                tempAdapter.updateData(soundList)
-                binding.icon.setImageResource(soundList[indexSelected].icon)
-            }
-        }
-
 
 
         return view
