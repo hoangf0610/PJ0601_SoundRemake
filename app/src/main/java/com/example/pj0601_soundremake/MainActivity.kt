@@ -11,10 +11,10 @@ import androidx.lifecycle.MutableLiveData
 import com.example.pj0601_soundremake.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
 
     val soundLiveData = MutableLiveData<Sound>()
-    val soundIndex = MutableLiveData<Sound>()
     private val fragmentAll = AllFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun  goToDetailFragment(soundList: Sound) {
+    fun goToDetailFragment(soundList: Sound) {
         val fragmentDetail = supportFragmentManager.beginTransaction()
         val detailFragment = DetailFragment()
 
@@ -50,10 +50,12 @@ class MainActivity : AppCompatActivity() {
         detailFragment.arguments = bundle   // gói bundle vào arguments
 
         fragmentDetail.addToBackStack(DetailFragment.TAG) // chuyển data
-        fragmentDetail.replace(R.id.flFragment, detailFragment) // add : thêm detailFragment vào stack
+        fragmentDetail.replace(
+            R.id.flFragment,
+            detailFragment
+        ) // add : thêm detailFragment vào stack
         fragmentDetail.commit()
     }
-
 
 
 }

@@ -9,14 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pj0601_soundremake.databinding.ItemHorizontalBinding
 
-class HorizontalSoundAdapter(var soundList:MutableList<Sound>, var listener: OnItemClicked):RecyclerView.Adapter<HorizontalSoundAdapter.HorizontalSoundViewHolder>() {
-    inner class HorizontalSoundViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+class HorizontalSoundAdapter(var soundList: MutableList<Sound>, var listener: OnItemClicked) :
+    RecyclerView.Adapter<HorizontalSoundAdapter.HorizontalSoundViewHolder>() {
+    inner class HorizontalSoundViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = ItemHorizontalBinding.bind(itemView)
 
         val img: ImageView = itemView.findViewById(R.id.iconHorizontal)
     }
 
-    private lateinit var  soundSelected :Sound
+    private lateinit var soundSelected: Sound
 
     fun updateData(newData: MutableList<Sound>) {
 //      update ds
@@ -29,7 +30,8 @@ class HorizontalSoundAdapter(var soundList:MutableList<Sound>, var listener: OnI
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorizontalSoundViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_horizontal, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_horizontal, parent, false)
         return HorizontalSoundViewHolder(view)
     }
 
@@ -48,12 +50,6 @@ class HorizontalSoundAdapter(var soundList:MutableList<Sound>, var listener: OnI
         holder.img.setOnClickListener {
             setSelected(sound)
             listener.onItemClickIcon(sound = sound, position)
-//            for(s in soundList) s.isSelected = false
-//            sound.isSelected = true
-//            notifyDataSetChanged()
-
-            (holder.itemView.context as MainActivity).soundIndex.value = sound
-//            Toast.makeText(holder.itemView.context, sound.name, Toast.LENGTH_SHORT).show()
         }
     }
 

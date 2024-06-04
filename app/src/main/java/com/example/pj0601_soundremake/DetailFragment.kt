@@ -27,7 +27,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     lateinit var soundList: MutableList<Sound>
     lateinit var tempAdapter: HorizontalSoundAdapter
 
-    private lateinit var  soundSelected :Sound
+    private lateinit var soundSelected: Sound
 
 
     override fun onCreateView(
@@ -38,7 +38,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        var index = arguments?.getInt("index") ?:-1
+        var index = arguments?.getInt("index") ?: -1
         var sound = arguments?.getInt("sound") ?: 0
         var icon = arguments?.getInt("icon") ?: 0
         var name = arguments?.getInt("name") ?: 0
@@ -49,21 +49,33 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         var volumn = arguments?.getInt("volumn") ?: 0
         var duration = arguments?.getString("duration") ?: ""
 
-        soundSelected = Sound(index, sound, icon, name, isSelected, onFlash, onVibration, onSound, volumn, duration)
+        soundSelected = Sound(
+            index,
+            sound,
+            icon,
+            name,
+            isSelected,
+            onFlash,
+            onVibration,
+            onSound,
+            volumn,
+            duration
+        )
 
         soundList = Constants.generateSoundList()
 
 
-        tempAdapter= HorizontalSoundAdapter(soundList, object : HorizontalSoundAdapter.OnItemClicked{
-            override fun onItemClickIcon(sound: Sound, position: Int) {
-                soundSelected.sound = sound.sound
-                soundSelected.icon = sound.icon
-                soundSelected.name = sound.name
-                binding.icon.setImageResource(sound.icon)
-                binding.tvSoundName.setText(sound.name)
-                AllFragment.indexSelected = position
-            }
-        })
+        tempAdapter =
+            HorizontalSoundAdapter(soundList, object : HorizontalSoundAdapter.OnItemClicked {
+                override fun onItemClickIcon(sound: Sound, position: Int) {
+                    soundSelected.sound = sound.sound
+                    soundSelected.icon = sound.icon
+                    soundSelected.name = sound.name
+                    binding.icon.setImageResource(sound.icon)
+                    binding.tvSoundName.setText(sound.name)
+                    AllFragment.indexSelected = position
+                }
+            })
 
         binding.rcvHorizontal.adapter = tempAdapter
         binding.rcvHorizontal.layoutManager = LinearLayoutManager(
@@ -115,13 +127,12 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             soundSelected.duration = binding.radioButton4.text.toString()
         }
 
-        binding.imgBack.setOnClickListener{
+        binding.imgBack.setOnClickListener {
             parentFragmentManager.popBackStack()
         }
 
         binding.tvApply.setOnClickListener {
             (activity as MainActivity).soundLiveData.value = soundSelected
-            (activity as MainActivity).soundIndex.value = soundSelected
             parentFragmentManager.popBackStack()
         }
 

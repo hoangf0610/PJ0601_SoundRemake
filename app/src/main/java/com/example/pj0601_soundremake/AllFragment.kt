@@ -18,6 +18,7 @@ class AllFragment : Fragment(R.layout.fragment_all) {
         var indexSelected: Int = -1
         const val TAG = "AllFragment"
     }
+
     lateinit var soundList: MutableList<Sound>
     lateinit var tempAdapter: SoundAdapter
 
@@ -33,8 +34,10 @@ class AllFragment : Fragment(R.layout.fragment_all) {
                 indexSelected = position
                 (activity as MainActivity).goToDetailFragment(sound)
             }
+
             override fun onItemPlay(sound: Sound, position: Int) {
-                Toast.makeText(this@AllFragment.requireContext(), sound.name, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AllFragment.requireContext(), sound.name, Toast.LENGTH_SHORT)
+                    .show()
             }
         })
 
@@ -61,7 +64,7 @@ class AllFragment : Fragment(R.layout.fragment_all) {
         (activity as? MainActivity)?.soundLiveData?.observe(activity as LifecycleOwner) {
             Log.i(TAG, "observe PictureItem Livedata $it")
 
-            for(s in soundList) {
+            for (s in soundList) {
                 s.isSelected = false
             }
 

@@ -10,14 +10,15 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class SoundAdapter (var soundList:MutableList<Sound>, val listener: OnItemClicked ):RecyclerView.Adapter<SoundAdapter.SoundViewHolder>() {
+class SoundAdapter(var soundList: MutableList<Sound>, val listener: OnItemClicked) :
+    RecyclerView.Adapter<SoundAdapter.SoundViewHolder>() {
 
     interface OnItemClicked {
         fun onItemClicked(sound: Sound, position: Int)
         fun onItemPlay(sound: Sound, position: Int)
     }
 
-    inner class SoundViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+    inner class SoundViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgSound: ImageView = itemView.findViewById(R.id.iconSound)
         val tvName: TextView = itemView.findViewById(R.id.tv_name)
         val btPlay: ImageView = itemView.findViewById(R.id.bt_play)
@@ -59,10 +60,10 @@ class SoundAdapter (var soundList:MutableList<Sound>, val listener: OnItemClicke
             holder.cardView.setBackgroundResource(R.drawable.bg_home_item_sound_recyclerview_blue)
             holder.tvName.setTextColor(Color.WHITE)
             holder.btPlay.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP)
-            if(sound.onFlash) holder.imgOnFlash.setColorFilter(Color.WHITE)
-            if(sound.onVibration) holder.imgOnVibration.setColorFilter(Color.WHITE)
-            if(sound.onSound) holder.imgOnSound.setColorFilter(Color.WHITE)
-            if(sound.volumn != 0) holder.tvVolumn.setTextColor(Color.WHITE)
+            if (sound.onFlash) holder.imgOnFlash.setColorFilter(Color.WHITE)
+            if (sound.onVibration) holder.imgOnVibration.setColorFilter(Color.WHITE)
+            if (sound.onSound) holder.imgOnSound.setColorFilter(Color.WHITE)
+            if (sound.volumn != 0) holder.tvVolumn.setTextColor(Color.WHITE)
             holder.tvDuration.setTextColor(Color.WHITE)
 
         } else {
